@@ -1,0 +1,93 @@
+# ----- CONFIGS -----
+LOGO_URL      = "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"  # troque
+LANDING_URL   = "https://seudominio.com/minha-landing?utm_source=email&utm_medium=remarketing&utm_campaign=teste"
+UNSUB_URL_BASE= "https://seudominio.com/unsubscribe?email="  # mantenha
+
+HTML_TEMPLATE = """\
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>Novidades e ofertas especiais</title>
+  <!-- PREHEADER (aparece do lado do assunto) -->
+  <span style="display:none!important;visibility:hidden;opacity:0;color:transparent;height:0;width:0;overflow:hidden;">
+    Ofertas selecionadas para você, {nome}! Confira na nossa página. &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+  </span>
+</head>
+<body style="margin:0;padding:0;background:#f5f7fb;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f5f7fb;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width:100%;max-width:600px;background:#ffffff;border-radius:12px;overflow:hidden">
+          <!-- HEADER -->
+          <tr>
+            <td align="center" style="padding:28px 24px 12px;">
+              <img src="{logo_url}" width="56" height="56" alt="Logo" style="display:block;border:0;">
+              <div style="font:700 20px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;color:#111;margin-top:12px;">
+                Novidades e ofertas especiais
+              </div>
+            </td>
+          </tr>
+
+          <!-- HERO -->
+          <tr>
+            <td style="padding:8px 24px 0;">
+              <div style="font:400 16px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;color:#333;">
+                Olá {nome},<br><br>
+                Preparamos uma seleção rápida de ofertas e lançamentos da nossa loja — tudo em uma página única
+                para você comparar e decidir sem perder tempo.
+              </div>
+            </td>
+          </tr>
+
+          <!-- CTA -->
+          <tr>
+            <td align="center" style="padding:24px 24px 8px;">
+              <!-- botão “bulletproof” -->
+              <a href="{landing_url}"
+                 style="background:#1a73e8;color:#fff;text-decoration:none;
+                        display:inline-block;padding:14px 24px;border-radius:8px;
+                        font:600 16px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;">
+                 Ver ofertas agora
+              </a>
+            </td>
+          </tr>
+
+          <!-- LISTA CURTA (opcional) -->
+          <tr>
+            <td style="padding:8px 24px 0;">
+              <ul style="margin:0 0 16px 18px;padding:0;font:400 14px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;color:#444;">
+                <li>Entrega rápida e garantia oficial</li>
+                <li>Pagamento facilitado</li>
+                <li>Suporte pós-venda direto com a loja</li>
+              </ul>
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="padding:16px 24px 28px;">
+              <div style="height:1px;background:#e9eef5;margin:0 0 16px 0;"></div>
+              <div style="font:400 12px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;color:#6b7280;">
+                Você está recebendo este e-mail por ser nosso cliente. Se não quiser mais receber,
+                <a href="{unsubscribe_url}" style="color:#1a73e8;">clique aqui para descadastrar</a>.
+                <br>
+                © {ano} Sua Loja — Todos os direitos reservados.
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <!-- fallback de link em texto simples -->
+        <div style="font:400 12px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;color:#777;margin-top:12px;">
+          Problemas com o botão? Acesse: <br>
+          <a href="{landing_url}" style="color:#1a73e8;word-break:break-all;">{landing_url}</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+"""
