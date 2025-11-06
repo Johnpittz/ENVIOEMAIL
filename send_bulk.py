@@ -15,7 +15,7 @@ FROM_NAME = "Sua Loja"
 FROM_ADDR = "no-reply@exemplo.com"  # NÃO use o USER aqui
 
 # Throttling
-EMAILS_PER_MIN = 5
+EMAILS_PER_MIN = 10
 DELAY = 60.0 / EMAILS_PER_MIN
 
 # Links
